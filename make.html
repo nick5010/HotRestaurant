@@ -8,6 +8,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
 
 </head>
 
@@ -42,7 +44,7 @@
                         placeholder="Unique ID">
                     <small id="uniqueIDilHelpId" class="form-text text-muted"></small>
                     <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id='submit' class="btn btn-primary">Submit</button>
                 </div>
 
             </div>
@@ -57,7 +59,22 @@
 
     </div>
 
-
+    <script type='text/javascript'>
+        $('#submit').on('click', function (event) {
+            event.preventDefault();
+            var newPerson = {
+                name: $('#name').val().trim(),
+                email: $('#email').val().trim(),
+                phone: $('#phone').val().trim(),
+                uniqueID: $('#uniqueID').val().trim(),
+            };
+            $.post('', newPerson)
+                .then(function () {
+                    console.log('make.html', data);
+                    alert('Adding reservation...');
+                })
+        })
+    </script>
 </body>
 
 </html>
