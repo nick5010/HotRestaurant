@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tables Page</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fa fa-fire"></span> Supa Hot Fire Restaurant</h1>
+            <hr>
+            <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
+            <br>
+
+            <div class="text-center">
+                <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make
+                        Reservation</button></a>
+            </div>
+            <div class="container mt-3">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                    <br>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId"
+                        placeholder="Email">
+                    <small id="emailHelpId" class="form-text text-muted"></small>
+                    <br>
+                    <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="helpId"
+                        placeholder="Phone Number">
+                    <small id="phoneHelpId" class="form-text text-muted"></small>
+                    <br>
+                    <input type="uniqueID" class="form-control" name="uniqueID" id="uniqueID" aria-describedby="HelpId"
+                        placeholder="Unique ID">
+                    <small id="uniqueIDilHelpId" class="form-text text-muted"></small>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
