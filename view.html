@@ -22,15 +22,16 @@
             <br>
 
             <div class="text-center">
-                <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span>Make Reservation</button></a>
+                <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span>Make
+                        Reservation</button></a>
                 <a href="/"><button class="btn btn-lg btn-primary"><span class="fa fa-home"></span></button></a>
             </div>
         </div>
         <div class="card text-left">
-          <img class="card-img-top" src="holder.js/100px180/" alt="">
-          <div class="card-body currentRes">
-            <h4 class="card-title">Current Reservations</h4>
-          </div>
+            <img class="card-img-top" src="holder.js/100px180/" alt="">
+            <div class="card-body currentRes">
+                <h4 class="card-title">Current Reservations</h4>
+            </div>
         </div>
 
         <footer class="footer">
@@ -41,6 +42,38 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+                url: "http://localhost:3000/api/tables",
+                method: "GET"
+            })
+            // After the data comes back from the API
+            .then(function (response) {
+                console.log(response);
+                // Storing an array of results in the results variable
+                var results = response;
+                results.forEach(element => {
+
+                    var newDiv = $('<div class="card">');
+                    var newName = $('<h3>').text("Name: " + element.name)
+                    var newEmail = $('<h3>').text("Email: " + element.email)
+                    var newPhone = $('<h3>').text("Phone: " + element.phone)
+                    var newID = $('<h3>').text("ID: " + element.uniqueID)
+                    var hr = $('<hr class = "my-2">')
+
+                    newDiv.append(newName);
+                    newDiv.append(newEmail);
+                    newDiv.append(newPhone);
+                    newDiv.append(newID);
+                    newDiv.append(hr);
+
+                    $('.currentRes').append(newDiv);
+                    console.log(newDiv)
+                });
+
+            });
+    </script>
+
 </body>
 
 </html>
