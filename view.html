@@ -52,13 +52,14 @@
                 console.log(response);
                 // Storing an array of results in the results variable
                 var results = response;
-                results.forEach(element => {
+
+                for (i = 0; i < 5; i++) {
 
                     var newDiv = $('<div class="card">');
-                    var newName = $('<h3>').text("Name: " + element.name)
-                    var newEmail = $('<h3>').text("Email: " + element.email)
-                    var newPhone = $('<h3>').text("Phone: " + element.phone)
-                    var newID = $('<h3>').text("ID: " + element.uniqueID)
+                    var newName = $('<h3>').text("Name: " + response[i].name)
+                    var newEmail = $('<h3>').text("Email: " + response[i].email)
+                    var newPhone = $('<h3>').text("Phone: " + response[i].phone)
+                    var newID = $('<h3>').text("ID: " + response[i].uniqueID)
                     var hr = $('<hr class = "my-2">')
 
                     newDiv.append(newName);
@@ -69,7 +70,25 @@
 
                     $('.currentRes').append(newDiv);
                     console.log(newDiv)
-                });
+                };
+                for (i = 5; i > 4; i++) {
+
+                    var newDiv = $('<div class="card">');
+                    var newName = $('<h3>').text("Name: " + response[i].name)
+                    var newEmail = $('<h3>').text("Email: " + response[i].email)
+                    var newPhone = $('<h3>').text("Phone: " + response[i].phone)
+                    var newID = $('<h3>').text("ID: " + response[i].uniqueID)
+                    var hr = $('<hr class = "my-2">')
+
+                    newDiv.append(newName);
+                    newDiv.append(newEmail);
+                    newDiv.append(newPhone);
+                    newDiv.append(newID);
+                    newDiv.append(hr);
+
+                    $('.currentRes').append(newDiv);
+                    console.log(newDiv)
+                };
 
             });
     </script>
