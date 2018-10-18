@@ -68,7 +68,7 @@
                 phone: $('#phone').val().trim(),
                 uniqueID: $('#uniqueID').val().trim(),
             };
-            $.post('', newPerson)
+            $.post('/api/tables', newPerson)
                 .then(function () {
                     console.log('make.html', data);
                     alert('Adding reservation...');

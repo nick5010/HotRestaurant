@@ -18,19 +18,19 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get('/reservations', function(req, res){
+app.get('/api/tables', function(req, res){
     return res.json(reservations)
 })
 
-app.get("/make", function(req, res) {
+app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "make.html"));
 });
 
-app.get("/view", function(req, res) {
+app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
 
-app.post('/reservations', function(req, res){
+app.post('/api/tables', function(req, res){
     var newPerson = req.body;
     newPerson.routeName = newPerson.name.replace(/\s+/g, "").toLowerCase();
     console.log(newPerson);
