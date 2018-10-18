@@ -47,7 +47,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         $.ajax({
-                url: "http://localhost:3000/api/tables",
+                url: "https://fierce-hollows-28703.herokuapp.com/api/tables",
                 method: "GET"
             })
             // After the data comes back from the API
@@ -89,7 +89,7 @@
                     newDiv.append(newID);
                     newDiv.append(hr);
 
-                    $('.currentRes').append(newDiv);
+                    $('.waitingRes').append(newDiv);
                     console.log(newDiv)
                 };
 
